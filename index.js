@@ -6,14 +6,6 @@ import {
   ConverseCommand,
 } from "@aws-sdk/client-bedrock-runtime";
 
-// export const handler = async (event) => {
-//   console.log(chalk.blue("Hello World - UPDATED!"));
-//   const { modelId, prompt } = event;
-//   console.log(chalk.blue("--> Model ID: ", modelId));
-//   console.log(chalk.blue("--> Prompt: ", prompt));
-//   return { message: "Hello World!", event };
-// };
-
 export const handler = async (event) => {
   const client = new BedrockRuntimeClient({ region: "us-east-1" });
 
