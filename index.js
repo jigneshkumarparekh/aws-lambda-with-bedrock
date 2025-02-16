@@ -9,8 +9,10 @@ import {
 export const handler = async (event) => {
   const client = new BedrockRuntimeClient({ region: "us-east-1" });
 
-  // Extract input data from the event object
-  const { modelId, prompt } = event;
+  console.log(`--> Event: `, event);
+
+  // Extract input data from the event object. The model ID and the prompt are passed as query parameters to API gateway.
+  const { modelId, prompt } = JSON.parse(event.body).queryStringParameters;
 
   console.log(chalk.blue("--> Model ID: ", modelId));
   console.log(chalk.blue("--> Prompt: ", prompt));
